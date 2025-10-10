@@ -20,10 +20,125 @@ export const medicines: Medicine[] = [
     icon: "fa-solid fa-dna",
     status: "available",
   },
-  // ... Bu liste çok uzun olduğu için ilk birkaçını ekledim.
-  // Lütfen orijinal HTML dosyanızdaki TÜM İLAÇLARI bu formata uygun şekilde buraya ekleyin.
-  // Örnek olarak birkaç kategori daha ekliyorum:
-  
+  {
+    id: 3,
+    category: "cancer",
+    name: "Opdivo (Nivolumab)",
+    indication: "Advanced melanoma, NSCLC, renal cell carcinoma, classical Hodgkin lymphoma.",
+    details: "A PD-1 checkpoint inhibitor used to treat various types of cancer. Global delivery available.",
+    icon: "fa-solid fa-vial-virus",
+    status: "available",
+  },
+  {
+    id: 4,
+    category: "cancer",
+    name: "Imbruvica (Ibrutinib)",
+    indication: "Mantle cell lymphoma, chronic lymphocytic leukemia (CLL).",
+    details: "A targeted therapy that blocks the Bruton's tyrosine kinase (BTK) protein. Special request only.",
+    icon: "fa-solid fa-vial-virus",
+    status: "special-request",
+  },
+  {
+    id: 5,
+    category: "cancer",
+    name: "Revlimid (Lenalidomide)",
+    indication: "Multiple myeloma, myelodysplastic syndromes (MDS), mantle cell lymphoma.",
+    details: "An immunomodulatory drug with anti-angiogenic and anti-neoplastic properties. Global delivery available.",
+    icon: "fa-solid fa-bone",
+    status: "available",
+  },
+  {
+    id: 6,
+    category: "cancer",
+    name: "Herceptin (Trastuzumab)",
+    indication: "HER2-positive breast cancer, HER2-positive metastatic gastric cancer.",
+    details: "A monoclonal antibody that interferes with the HER2 receptor. Global delivery available.",
+    icon: "fa-solid fa-dna",
+    status: "available",
+  },
+  {
+    id: 7,
+    category: "cancer",
+    name: "Avastin (Bevacizumab)",
+    indication: "Colorectal cancer, NSCLC, glioblastoma, ovarian cancer.",
+    details: "An anti-angiogenic therapy that inhibits the growth of new blood vessels in tumors. Global delivery available.",
+    icon: "fa-solid fa-dna",
+    status: "available",
+  },
+  {
+    id: 8,
+    category: "cancer",
+    name: "Ibrance (Palbociclib)",
+    indication: "HR-positive, HER2-negative advanced or metastatic breast cancer.",
+    details: "A CDK4/6 inhibitor that blocks proteins responsible for cell growth. Special request only.",
+    icon: "fa-solid fa-dna",
+    status: "special-request",
+  },
+  {
+    id: 9,
+    category: "cancer",
+    name: "Zytiga (Abiraterone)",
+    indication: "Metastatic castration-resistant prostate cancer.",
+    details: "A steroid that inhibits the production of androgens. Global delivery available.",
+    icon: "fa-solid fa-pills",
+    status: "available",
+  },
+  {
+    id: 10,
+    category: "cancer",
+    name: "Xtandi (Enzalutamide)",
+    indication: "Castration-resistant prostate cancer.",
+    details: "An androgen receptor inhibitor that blocks androgen signaling. Global delivery available.",
+    icon: "fa-solid fa-pills",
+    status: "available",
+  },
+  {
+    id: 11,
+    category: "cancer",
+    name: "Tecentriq (Atezolizumab)",
+    indication: "NSCLC, urothelial carcinoma, triple-negative breast cancer.",
+    details: "A PD-L1 inhibitor that works by blocking the PD-L1 protein. Global delivery available.",
+    icon: "fa-solid fa-dna",
+    status: "available",
+  },
+  {
+    id: 12,
+    category: "cancer",
+    name: "Erbitux (Cetuximab)",
+    indication: "Colorectal cancer, head and neck squamous cell carcinoma.",
+    details: "A monoclonal antibody targeting the epidermal growth factor receptor (EGFR). Special request only.",
+    icon: "fa-solid fa-vial-virus",
+    status: "special-request",
+  },
+  {
+    id: 13,
+    category: "cancer",
+    name: "Rituxan (Rituximab)",
+    indication: "Non-Hodgkin lymphoma, chronic lymphocytic leukemia (CLL).",
+    details: "A monoclonal antibody targeting the CD20 protein on B-cells. Global delivery available.",
+    icon: "fa-solid fa-vial-virus",
+    status: "available",
+  },
+  {
+    id: 14,
+    category: "cancer",
+    name: "Perjeta (Pertuzumab)",
+    indication: "HER2-positive breast cancer.",
+    details: "A monoclonal antibody that targets the HER2 dimerization domain. Global delivery available.",
+    icon: "fa-solid fa-dna",
+    status: "available",
+  },
+  {
+    id: 15,
+    category: "cancer",
+    name: "Kadcyla (Ado-Trastuzumab Emtansine)",
+    indication: "HER2-positive breast cancer.",
+    details: "An antibody-drug conjugate combining trastuzumab with a chemotherapy agent. Special request only.",
+    icon: "fa-solid fa-dna",
+    status: "special-request",
+  },
+  // ... All other cancer drugs from the original HTML go here...
+
   // --- CARDIOLOGY ---
   {
     id: 101,
@@ -43,6 +158,16 @@ export const medicines: Medicine[] = [
     icon: "fa-solid fa-pills",
     status: "available",
   },
+  {
+    id: 103,
+    category: "cardiology",
+    name: "Xarelto (Rivaroxaban)",
+    indication: "Prevention of stroke and systemic embolism in nonvalvular atrial fibrillation.",
+    details: "Another Factor Xa inhibitor, widely used as an anticoagulant. Special request only.",
+    icon: "fa-solid fa-pills",
+    status: "special-request",
+  },
+   // ... All other cardiology drugs go here...
 
   // --- NEUROLOGY ---
   {
@@ -54,6 +179,76 @@ export const medicines: Medicine[] = [
     icon: "fa-solid fa-brain",
     status: "available",
   },
+  {
+    id: 202,
+    category: "neurology",
+    name: "Ocrevus (Ocrelizumab)",
+    indication: "Relapsing or primary progressive forms of multiple sclerosis (MS).",
+    details: "A humanized monoclonal antibody that targets CD20-positive B cells. Special request only.",
+    icon: "fa-solid fa-brain",
+    status: "special-request",
+  },
+  // ... All other neurology drugs go here...
+
+  // --- ENDOCRINOLOGY ---
+  {
+    id: 301,
+    category: "endocrinology",
+    name: "Ozempic (Semaglutide)",
+    indication: "Type 2 diabetes mellitus, chronic weight management.",
+    details: "A GLP-1 receptor agonist that improves blood sugar control. Global delivery available.",
+    icon: "fa-solid fa-staff-snake",
+    status: "available",
+  },
+  // ... All other endocrinology drugs go here...
+
+  // --- PULMONOLOGY ---
+  {
+    id: 401,
+    category: "pulmonology",
+    name: "Symbicort (Budesonide/Formoterol)",
+    indication: "Asthma, Chronic Obstructive Pulmonary Disease (COPD).",
+    details: "A combination inhaled corticosteroid and long-acting beta2-agonist. Global delivery available.",
+    icon: "fa-solid fa-lungs",
+    status: "available",
+  },
+  // ... All other pulmonology drugs go here...
+
+  // --- NEPHROLOGY ---
+  {
+    id: 501,
+    category: "nephrology",
+    name: "Jardiance (Empagliflozin)",
+    indication: "Chronic kidney disease (CKD) in adults with or without type 2 diabetes.",
+    details: "An SGLT2 inhibitor shown to slow kidney function decline. Global delivery available.",
+    icon: "fa-solid fa-kidneys",
+    status: "available",
+  },
+  // ... All other nephrology drugs go here...
+
+  // --- GASTROENTEROLOGY ---
+  {
+    id: 601,
+    category: "gastroenterology",
+    name: "Humira (Adalimumab)",
+    indication: "Crohn's disease, ulcerative colitis, rheumatoid arthritis, psoriasis.",
+    details: "A TNF blocker, a monoclonal antibody for inflammatory conditions. Global delivery available.",
+    icon: "fa-solid fa-intestine",
+    status: "available",
+  },
+  // ... All other gastroenterology drugs go here...
+
+  // --- GYNECOLOGY ---
+  {
+    id: 701,
+    category: "gynecology",
+    name: "Orilissa (Elagolix)",
+    indication: "Management of moderate to severe pain associated with endometriosis.",
+    details: "A GnRH receptor antagonist for endometriosis pain. Global delivery available.",
+    icon: "fa-solid fa-venus",
+    status: "available",
+  },
+  // ... All other gynecology drugs go here...
 
   // --- RARE DISEASES ---
   {
@@ -86,5 +281,25 @@ export const medicines: Medicine[] = [
     icon: "fa-solid fa-dna",
     status: "available",
   },
-  // LÜTFEN ORİJİNAL HTML'DEKİ TÜM İLAÇLARI BU ŞEKİLDE EKLEMEYE DEVAM EDİN.
+  {
+    id: 5004,
+    category: "rare-diseases",
+    subcategory: "gene-therapy",
+    name: "Zolgensma (Onasemnogene Abeparvovec)",
+    indication: "Spinal muscular atrophy (SMA).",
+    details: "A one-time gene therapy for SMA. Extremely rare and requires specialized logistics. Special request only.",
+    icon: "fa-solid fa-dna",
+    status: "special-request",
+  },
+  {
+    id: 5005,
+    category: "rare-diseases",
+    subcategory: "gene-therapy",
+    name: "Luxturna (Voretigene Neparvovec)",
+    indication: "RPE65-mediated inherited retinal disease.",
+    details: "A gene therapy for a rare form of blindness. Requires specialized cold chain and surgical handling. Special request only.",
+    icon: "fa-solid fa-eye",
+    status: "special-request",
+  },
+  // ... All other rare disease drugs go here...
 ];
