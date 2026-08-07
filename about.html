@@ -150,6 +150,10 @@
 </footer>
 
 <script>
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
+  });
+
   var revealEls = document.querySelectorAll('.service-card, .cond-card, .prog-card, .prog-block, .step, .fee-card, .problem-item, .detail-card, .content-shell > h2, .content-shell > .detail-card');
   revealEls.forEach(function(el, i){
     el.classList.add('reveal');
