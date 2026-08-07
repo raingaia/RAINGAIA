@@ -37,6 +37,7 @@
   </div>
 </header>
 
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-btn" id="closeMenuBtn" aria-label="Close menu">&times;</button>
   <nav>
@@ -332,12 +333,12 @@
   var menuBtn = document.getElementById('menuBtn');
   var closeMenuBtn = document.getElementById('closeMenuBtn');
   var mobileMenu = document.getElementById('mobileMenu');
-  if (menuBtn && mobileMenu) {
-    menuBtn.addEventListener('click', function(){ mobileMenu.classList.add('open'); });
-  }
-  if (closeMenuBtn && mobileMenu) {
-    closeMenuBtn.addEventListener('click', function(){ mobileMenu.classList.remove('open'); });
-  }
+  var mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+  function openMenu(){ mobileMenu.classList.add('open'); mobileMenuOverlay.classList.add('open'); menuBtn.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMenu(){ mobileMenu.classList.remove('open'); mobileMenuOverlay.classList.remove('open'); menuBtn.classList.remove('open'); document.body.style.overflow=''; }
+  if (menuBtn) menuBtn.addEventListener('click', openMenu);
+  if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+  if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
 </script>
 
 </body>

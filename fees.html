@@ -30,8 +30,24 @@
     <div class="nav-cta">
       <a href="start-a-case.html" class="btn btn-primary" style="padding:11px 22px;font-size:14px;">Start My Case Review</a>
     </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </header>
+
+<div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenuBtn" aria-label="Close menu">&times;</button>
+  <nav>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="services.html">Services</a>
+    <a href="programs.html">Programs</a>
+    <a href="conditions.html">Conditions</a>
+    <a href="fees.html" class="active">Fees</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a href="start-a-case.html" class="btn btn-primary">Start My Case Review</a>
+</div>
 
 
 <section class="page-hero">
@@ -109,6 +125,18 @@
     </div>
   </div>
 </footer>
+
+<script>
+  var menuBtn = document.getElementById('menuBtn');
+  var closeMenuBtn = document.getElementById('closeMenuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+  function openMenu(){ mobileMenu.classList.add('open'); mobileMenuOverlay.classList.add('open'); menuBtn.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMenu(){ mobileMenu.classList.remove('open'); mobileMenuOverlay.classList.remove('open'); menuBtn.classList.remove('open'); document.body.style.overflow=''; }
+  if (menuBtn) menuBtn.addEventListener('click', openMenu);
+  if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+  if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
+</script>
 
 </body>
 </html>
