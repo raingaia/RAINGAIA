@@ -162,6 +162,22 @@
 </footer>
 
 <script>
+  var revealEls = document.querySelectorAll('.service-card, .cond-card, .prog-card, .prog-block, .step, .fee-card, .problem-item, .detail-card, .content-shell > h2, .content-shell > .detail-card');
+  revealEls.forEach(function(el, i){
+    el.classList.add('reveal');
+    el.style.transitionDelay = (Math.min(i % 4, 3) * 0.08) + 's';
+  });
+  if ('IntersectionObserver' in window) {
+    var revealIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) { entry.target.classList.add('in'); revealIO.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    revealEls.forEach(function(el){ revealIO.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
   var menuBtn = document.getElementById('menuBtn');
   var closeMenuBtn = document.getElementById('closeMenuBtn');
   var mobileMenu = document.getElementById('mobileMenu');
