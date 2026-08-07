@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Start a Case — RAINGAIA HEALTH</title>
+<meta name="description" content="Submit your case for independent review by RAINGAIA HEALTH's clinical research team. No obligation to proceed after your initial evaluation." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="disclaimer-banner wrap" style="max-width:100%;">
+  RAINGAIA HEALTH is an independent patient access facilitator, a service of RAINGAIA LLC. We are not a pharmacy, a medical provider, or a government agency, and we do not guarantee acceptance into any program.
+</div>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark"></span>RAINGAIA HEALTH</a>
+    <nav class="links">
+      <a href="how-it-works.html">How It Works</a>
+      <a href="services.html">Services</a>
+      <a href="programs.html">Programs</a>
+      <a href="conditions.html">Conditions</a>
+      <a href="fees.html">Fees</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="start-a-case.html" class="btn btn-primary" style="padding:11px 22px;font-size:14px;">Start My Case Review</a>
+    </div>
+  </div>
+</header>
+
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> / Start a Case</div>
+    <span class="eyebrow">Start Here</span>
+    <h1>Tell us about your case.</h1>
+    <p class="lede">Every case is reviewed individually. There is no obligation to proceed after your initial evaluation, and your information is kept confidential.</p>
+  </div>
+</section>
+
+<section class="apply" style="padding-top:64px;">
+  <div class="wrap apply-grid">
+    <div class="apply-side">
+      <span class="eyebrow">Before You Start</span>
+      <h2 style="margin-top:14px;">What happens after you submit</h2>
+      <p>Our clinical research team reviews your case and responds within 2–3 business days with an honest view of what U.S. options may be relevant. If you choose to proceed, we'll walk you through the fee structure before any payment is requested.</p>
+      <div class="contact-block">
+        <div><strong style="color:#fff;">RAINGAIA LLC</strong><br><span style="font-size:12.5px;color:#8199A9;">doing business as RAINGAIA HEALTH</span></div>
+        <div>7901 4th St N Ste 300, St. Petersburg, FL 33702, US</div>
+        <div>raingaia@outlook.com</div>
+      </div>
+    </div>
+    <form id="case-form">
+      <div class="form-row">
+        <div class="field">
+          <label for="fullName">Full name</label>
+          <input type="text" id="fullName" required />
+        </div>
+        <div class="field">
+          <label for="country">Country of residence</label>
+          <input type="text" id="country" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="field">
+          <label for="condition">Diagnosis / condition</label>
+          <input type="text" id="condition" placeholder="e.g. Usher syndrome" required />
+        </div>
+      </div>
+      <div class="field">
+        <label for="message">Briefly describe your case</label>
+        <textarea id="message" rows="4" placeholder="Diagnosis stage, current treatment, and what you're hoping to find in the U.S."></textarea>
+      </div>
+      <div class="consent">
+        <input type="checkbox" id="consent" required />
+        <label for="consent" style="text-transform:none;letter-spacing:0;margin:0;">I understand this is a case evaluation request, not a guarantee of acceptance into any program, and I agree to the <a href="terms-of-service.html" style="text-decoration:underline;">Terms of Service</a> and <a href="privacy-policy.html" style="text-decoration:underline;">Privacy Policy</a>.</label>
+      </div>
+      <button type="submit" class="form-submit">Submit Case for Review</button>
+      <div id="form-status"></div>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.getElementById('case-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var status = document.getElementById('form-status');
+    status.innerHTML = '<p style="color:#7FD9C4;">Submitting your case...</p>';
+    setTimeout(function(){
+      status.innerHTML = '<p style="color:#7FD9C4;">Thank you. Your case has been received — our clinical research team will contact you within 2–3 business days.</p>';
+      document.getElementById('case-form').reset();
+    }, 1400);
+  });
+</script>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:#fff;margin-bottom:14px;"><span class="logo-mark"></span>RAINGAIA HEALTH</div>
+        <p style="font-size:13.5px;max-width:320px;color:#8199A9;">An independent patient access facilitation company connecting international patients to advanced U.S. treatment and clinical trials.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="services.html">Services</a>
+      <a href="programs.html">Programs</a>
+        <a href="conditions.html">Conditions We Help With</a>
+        <a href="fees.html">Fees</a>
+        <a href="about.html">About</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="medical-disclaimer.html">Medical Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      RAINGAIA HEALTH is a service of RAINGAIA LLC, a Florida-registered company, providing independent patient access facilitation and coordination services. RAINGAIA HEALTH is not a hospital, pharmacy, medical provider, insurer, or government agency, does not practice medicine, and does not guarantee admission, acceptance, or outcomes for any patient, trial, or treatment program. All clinical decisions are made exclusively by licensed physicians at the receiving institution. Service fees are charged to and payable by patients only; RAINGAIA HEALTH does not accept payment, referral fees, or commissions from hospitals, trial sites, or medical institutions in connection with patient referrals.
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 RAINGAIA LLC. All rights reserved.</span>
+      <span>St. Petersburg, Florida, United States</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
