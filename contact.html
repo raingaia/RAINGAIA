@@ -91,21 +91,22 @@
         <div style="margin-top:12px;font-size:12px;color:#6E8393;">We communicate by email only and do not currently list a phone number.</div>
       </div>
     </div>
-    <form id="contact-form">
+    <form id="contact-form" action="https://formspree.io/f/xqpzezgq" method="POST">
+      <input type="hidden" name="_subject" value="New contact message — RAINGAIA HEALTH" />
       <div class="form-row">
-        <div class="field"><label for="cFullName">Full name</label><input type="text" id="cFullName" required /></div>
-        <div class="field"><label for="cEmail">Email address</label><input type="email" id="cEmail" required /></div>
+        <div class="field"><label for="cFullName">Full name</label><input type="text" id="cFullName" name="name" required /></div>
+        <div class="field"><label for="cEmail">Email address</label><input type="email" id="cEmail" name="email" required /></div>
       </div>
       <div class="field">
         <label for="cInquiryType">Reason for contact</label>
-        <select id="cInquiryType">
+        <select id="cInquiryType" name="reason">
           <option>Institutional / hospital partnership</option>
           <option>Press &amp; media</option>
           <option>General question</option>
           <option>Other</option>
         </select>
       </div>
-      <div class="field"><label for="cMessage">Your message</label><textarea id="cMessage" rows="5" placeholder="Tell us what this is about."></textarea></div>
+      <div class="field"><label for="cMessage">Your message</label><textarea id="cMessage" name="message" rows="5" placeholder="Tell us what this is about."></textarea></div>
       <button type="submit" class="form-submit">Send Message</button>
       <div id="contact-form-status"></div>
     </form>
@@ -151,14 +152,25 @@
     });
   }
 
-  document.getElementById('contact-form').addEventListener('submit', function(e){
+  var contactForm = document.getElementById('contact-form');
+  contactForm.addEventListener('submit', function(e){
     e.preventDefault();
     var status = document.getElementById('contact-form-status');
     status.innerHTML = '<p style="color:#7FD9C4;">Sending your message...</p>';
-    setTimeout(function(){
-      status.innerHTML = '<p style="color:#7FD9C4;">Thank you. We\'ve received your message and will respond within 2–3 business days.</p>';
-      document.getElementById('contact-form').reset();
-    }, 1400);
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if (response.ok) {
+        status.innerHTML = '<p style="color:#7FD9C4;">Thank you. We\'ve received your message and will respond within 2–3 business days.</p>';
+        contactForm.reset();
+      } else {
+        status.innerHTML = '<p style="color:#E07A5F;">Something went wrong. Please email us directly at raingaia@outlook.com.</p>';
+      }
+    }).catch(function(){
+      status.innerHTML = '<p style="color:#E07A5F;">Something went wrong. Please email us directly at raingaia@outlook.com.</p>';
+    });
   });
 </script>
 

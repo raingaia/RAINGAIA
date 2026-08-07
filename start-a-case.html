@@ -90,30 +90,31 @@
         <div>raingaia@outlook.com</div>
       </div>
     </div>
-    <form id="case-form">
+    <form id="case-form" action="https://formspree.io/f/xqpzezgq" method="POST">
+      <input type="hidden" name="_subject" value="New case review request — RAINGAIA HEALTH" />
       <div class="form-row">
         <div class="field">
           <label for="fullName">Full name</label>
-          <input type="text" id="fullName" required />
+          <input type="text" id="fullName" name="name" required />
         </div>
         <div class="field">
           <label for="country">Country of residence</label>
-          <input type="text" id="country" required />
+          <input type="text" id="country" name="country" required />
         </div>
       </div>
       <div class="form-row">
         <div class="field">
           <label for="email">Email address</label>
-          <input type="email" id="email" required />
+          <input type="email" id="email" name="email" required />
         </div>
         <div class="field">
           <label for="condition">Diagnosis / condition</label>
-          <input type="text" id="condition" placeholder="e.g. Usher syndrome" required />
+          <input type="text" id="condition" name="condition" placeholder="e.g. Usher syndrome" required />
         </div>
       </div>
       <div class="field">
         <label for="message">Briefly describe your case</label>
-        <textarea id="message" rows="4" placeholder="Diagnosis stage, current treatment, and what you're hoping to find in the U.S."></textarea>
+        <textarea id="message" name="message" rows="4" placeholder="Diagnosis stage, current treatment, and what you're hoping to find in the U.S."></textarea>
       </div>
       <div class="consent">
         <input type="checkbox" id="consent" required />
@@ -164,14 +165,25 @@
     });
   }
 
-  document.getElementById('case-form').addEventListener('submit', function(e){
+  var caseForm = document.getElementById('case-form');
+  caseForm.addEventListener('submit', function(e){
     e.preventDefault();
     var status = document.getElementById('form-status');
     status.innerHTML = '<p style="color:#7FD9C4;">Submitting your case...</p>';
-    setTimeout(function(){
-      status.innerHTML = '<p style="color:#7FD9C4;">Thank you. Your case has been received — our clinical research team will contact you within 2–3 business days.</p>';
-      document.getElementById('case-form').reset();
-    }, 1400);
+    fetch(caseForm.action, {
+      method: 'POST',
+      body: new FormData(caseForm),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if (response.ok) {
+        status.innerHTML = '<p style="color:#7FD9C4;">Thank you. Your case has been received — our clinical research team will contact you within 2–3 business days.</p>';
+        caseForm.reset();
+      } else {
+        status.innerHTML = '<p style="color:#E07A5F;">Something went wrong. Please email us directly at raingaia@outlook.com.</p>';
+      }
+    }).catch(function(){
+      status.innerHTML = '<p style="color:#E07A5F;">Something went wrong. Please email us directly at raingaia@outlook.com.</p>';
+    });
   });
 </script>
 
