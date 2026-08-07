@@ -24,6 +24,12 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="cookie-bar" id="cookieBar">
+  <div class="cookie-bar-inner">
+    <p>We use only essential cookies required for this site to function. We do not use tracking, analytics, or advertising cookies. See our <a href="privacy-policy.html#cookies">Privacy Policy</a> for details.</p>
+    <div class="cookie-bar-actions"><button class="cookie-bar-btn" id="cookieAcceptBtn">Got it</button></div>
+  </div>
+</div>
 <div class="disclaimer-banner wrap" style="max-width:100%;">
   RAINGAIA HEALTH is an independent patient access facilitator, a service of RAINGAIA LLC. We are not a pharmacy, a medical provider, or a government agency, and we do not guarantee acceptance into any program.
 </div>
@@ -78,6 +84,7 @@
         <li><a href="#health">Health-related information</a></li>
         <li><a href="#rights">Your rights</a></li>
         <li><a href="#security">Data security &amp; retention</a></li>
+        <li><a href="#cookies">Cookies</a></li>
         <li><a href="#contact">Contact us</a></li>
       </ol>
     </div>
@@ -106,7 +113,10 @@
     <h2 id="security">6. Data security &amp; retention</h2>
     <p>We take reasonable technical and organizational measures to protect your information. We retain case information for as long as needed to provide our services and to meet legal and recordkeeping obligations, after which it is securely deleted or anonymized.</p>
 
-    <h2 id="contact">7. Contact us</h2>
+    <h2 id="cookies">7. Cookies</h2>
+    <p>This website uses only strictly necessary cookies required for it to function — for example, to remember that you have already seen our cookie notice. We do not use tracking, analytics, or advertising cookies, and no information collected through cookies is shared with third parties or used to build advertising profiles. If this changes in the future, we will update this policy and, where required, ask for your consent first.</p>
+
+    <h2 id="contact">8. Contact us</h2>
     <p>RAINGAIA LLC, doing business as RAINGAIA HEALTH<br>
     7901 4th St N Ste 300, St. Petersburg, FL 33702, US<br>
     raingaia@outlook.com</p>
@@ -161,6 +171,18 @@
   if (menuBtn) menuBtn.addEventListener('click', openMenu);
   if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
   if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
+
+  var cookieBar = document.getElementById('cookieBar');
+  var cookieAcceptBtn = document.getElementById('cookieAcceptBtn');
+  if (cookieBar && !localStorage.getItem('rg_cookie_ack')) {
+    setTimeout(function(){ cookieBar.classList.add('show'); }, 500);
+  }
+  if (cookieAcceptBtn) {
+    cookieAcceptBtn.addEventListener('click', function(){
+      localStorage.setItem('rg_cookie_ack', '1');
+      cookieBar.classList.remove('show');
+    });
+  }
 </script>
 
 </body>

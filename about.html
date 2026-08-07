@@ -24,6 +24,12 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="cookie-bar" id="cookieBar">
+  <div class="cookie-bar-inner">
+    <p>We use only essential cookies required for this site to function. We do not use tracking, analytics, or advertising cookies. See our <a href="privacy-policy.html#cookies">Privacy Policy</a> for details.</p>
+    <div class="cookie-bar-actions"><button class="cookie-bar-btn" id="cookieAcceptBtn">Got it</button></div>
+  </div>
+</div>
 <div class="disclaimer-banner wrap" style="max-width:100%;">
   RAINGAIA HEALTH is an independent patient access facilitator, a service of RAINGAIA LLC. We are not a pharmacy, a medical provider, or a government agency, and we do not guarantee acceptance into any program.
 </div>
@@ -153,6 +159,18 @@
   if (menuBtn) menuBtn.addEventListener('click', openMenu);
   if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
   if (mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
+
+  var cookieBar = document.getElementById('cookieBar');
+  var cookieAcceptBtn = document.getElementById('cookieAcceptBtn');
+  if (cookieBar && !localStorage.getItem('rg_cookie_ack')) {
+    setTimeout(function(){ cookieBar.classList.add('show'); }, 500);
+  }
+  if (cookieAcceptBtn) {
+    cookieAcceptBtn.addEventListener('click', function(){
+      localStorage.setItem('rg_cookie_ack', '1');
+      cookieBar.classList.remove('show');
+    });
+  }
 </script>
 
 </body>
