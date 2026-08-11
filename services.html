@@ -18,6 +18,14 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"RAINGAIA HEALTH","alternateName":"RAINGAIA LLC","url":"https://health.raingaia.com/","email":"raingaia@outlook.com","address":{"@type":"PostalAddress","streetAddress":"7901 4th St N Ste 300","addressLocality":"St. Petersburg","addressRegion":"FL","postalCode":"33702","addressCountry":"US"},"description":"Independent patient access facilitator connecting international patients with rare, serious, and complex diagnoses to U.S. clinical trials and advanced therapies."}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Does RAINGAIA HEALTH provide medical treatment directly?","acceptedAnswer":{"@type":"Answer","text":"No. Every service we offer is administrative and logistical — research, record organization, application preparation, and coordination. All clinical decisions and treatment are provided exclusively by licensed physicians at the receiving U.S. institution."}},
+{"@type":"Question","name":"Do you translate medical records?","acceptedAnswer":{"@type":"Answer","text":"Yes, where needed, your records are reviewed, translated, and organized into the format U.S. institutions require for evaluation."}},
+{"@type":"Question","name":"Do you help with medical visa applications?","acceptedAnswer":{"@type":"Answer","text":"We help organize the supporting documentation your visa application requires, but visa legal representation itself is outside our scope — we recommend independent immigration counsel for that step."}},
+{"@type":"Question","name":"How long does your coordination support last once I'm in the U.S.?","acceptedAnswer":{"@type":"Answer","text":"We remain a consistent point of contact between you or your family and the U.S. medical team for as long as you need coordination support during your case."}}
+]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
@@ -164,6 +172,30 @@
   </div>
 </section>
 
+<section class="content-page" style="padding-top:0;">
+  <div class="content-shell" style="max-width:900px;">
+    <h2>Questions about our services</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q"><span>Does RAINGAIA HEALTH provide medical treatment directly?</span><span class="faq-icon"></span></button>
+        <div class="faq-a"><p>No. Every service we offer is administrative and logistical — research, record organization, application preparation, and coordination. All clinical decisions and treatment are provided exclusively by licensed physicians at the receiving U.S. institution.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Do you translate medical records?</span><span class="faq-icon"></span></button>
+        <div class="faq-a"><p>Yes, where needed, your records are reviewed, translated, and organized into the format U.S. institutions require for evaluation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>Do you help with medical visa applications?</span><span class="faq-icon"></span></button>
+        <div class="faq-a"><p>We help organize the supporting documentation your visa application requires, but visa legal representation itself is outside our scope — we recommend independent immigration counsel for that step.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q"><span>How long does your coordination support last once I'm in the U.S.?</span><span class="faq-icon"></span></button>
+        <div class="faq-a"><p>We remain a consistent point of contact between you or your family and the U.S. medical team for as long as you need coordination support during your case.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="wrap">
     <div class="footer-grid">
@@ -198,6 +230,10 @@
 </footer>
 
 <script>
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){ btn.parentElement.classList.toggle('open'); });
+  });
+
   var revealEls = document.querySelectorAll('.service-card, .cond-card, .prog-card, .prog-block, .step, .fee-card, .problem-item, .detail-card, .content-shell > h2, .content-shell > .detail-card');
   revealEls.forEach(function(el, i){
     el.classList.add('reveal');
